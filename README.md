@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Book Tracker
 
-## Getting Started
+A mini Saas application to track your reading journey, built with Next.js, Typescript and Supabase.
 
-First, run the development server:
+## Features
+- User authentication (email/password)
+- Add, view, update and delete books
+- Filter books by status (Reading/Completed/Wishlist)
+- Search books by title or author
+- Secure API with JWT verfication
+- Row-level security in database
+- Modern, clean UI with sidebar navigation
 
-```bash
+## Tech Stack
+- Frontend : Next.js, App Router, TypeScript, Tailwind css
+- Backend : Next.js API Routes
+- Database : Supabase (PostgreSQL)
+- Auth : Supabase Auth
+- Deployment : Vercel
+
+## Security
+- JWT verification on all API routes
+- Row-level security policies in Supabase
+- Environment variables for secret
+- User data isolation as users can only access their own books.
+
+## Setup Instruction
+
+### 1. Clone the repo
+git clone <repo-url>
+cd book-tracker
+
+### 2. Install dependencies
+npm install
+
+### 3. Set up Supabase
+1. Create a project at [supabase.com](https://supabase.cpm)
+2. Go to SQL Editor and run sql code.
+3. Get your API keys from Settings > API.
+
+### 4. Configure environment variable. (.env.local)
+Create .env.local in the root directory
+
+NEXT_PUBLIC_SUPABASE_URL= <your_supabase_project_url>
+NEXT_PUBLIC_SUPABASE_ANON_KEY = <your_supabase_anon_key>
+
+### 5. Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open [http://localhost:300]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 6. Deploy to Vercel
+# Install Vercel CLI
+npm i -g vercel
+# Deploy
+vercel
+# Add environment variables in Vercel dashboard, then deploy it to production. 
+vercel --prod
