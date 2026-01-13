@@ -25,7 +25,6 @@ A mini Saas application to track your reading journey, built with Next.js, Types
 - User data isolation as users can only access their own books.
 
 ## Setup Instruction
-
 ### 1. Clone the repo
 git clone <repo-url>
 cd book-tracker
@@ -49,9 +48,9 @@ npm run dev
 Open [http://localhost:300]
 
 ### 6. Deploy to Vercel
-# Install Vercel CLI
+#### Install Vercel CLI
 npm i -g vercel
 # Deploy
 vercel
-# Add environment variables in Vercel dashboard, then deploy it to production. 
+#### Add environment variables in Vercel dashboard, then deploy it to production. 
 vercel --prod
